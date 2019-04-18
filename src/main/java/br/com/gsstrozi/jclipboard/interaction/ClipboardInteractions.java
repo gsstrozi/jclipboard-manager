@@ -1,6 +1,7 @@
 package br.com.gsstrozi.jclipboard.interaction;
 
-import br.com.gsstrozi.jclipboard.stack.ClipboardStack;
+import br.com.gsstrozi.jclipboard.components.ListViewItens;
+import br.com.gsstrozi.jclipboard.stack.Stack;
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
 
@@ -16,6 +17,9 @@ public class ClipboardInteractions {
 	}
 	
 	public static void updateClipboardStack(String value) {
-		ClipboardStack.push(value);
+		if (value != null) {
+			Stack.push(value);	
+			ListViewItens.update();
+		}
 	}
 }

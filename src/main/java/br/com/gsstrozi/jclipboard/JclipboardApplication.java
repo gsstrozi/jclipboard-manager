@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import br.com.gsstrozi.jclipboard.components.ClipboardPanel;
 import br.com.gsstrozi.jclipboard.listener.NativeGlobalKeyListener;
+import br.com.gsstrozi.jclipboard.stack.Stack;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -27,6 +28,8 @@ public class JclipboardApplication extends Application {
 
 	@Override
 	public void start(Stage stage) throws Exception {
+		Stack.load();
+		
 		ClipboardPanel pane = new ClipboardPanel();
 		Scene scene = new Scene(pane.render(stage));
 		stage.setScene(scene);

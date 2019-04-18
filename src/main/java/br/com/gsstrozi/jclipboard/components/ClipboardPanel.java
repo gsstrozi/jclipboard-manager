@@ -6,10 +6,9 @@ import javafx.stage.Stage;
 
 public class ClipboardPanel {
 	public GridPane render(Stage stage) {
-		ListViewItens listViewItens = new ListViewItens();
-
 		VBox seasonSelection = new VBox();
-		seasonSelection.getChildren().addAll(listViewItens.render(stage));
+
+		seasonSelection.getChildren().addAll(ButtonHistory.render(stage), TextFieldSearch.render(stage), ListViewItens.render(stage));
 
 		GridPane pane = new GridPane();
 		pane.setHgap(10);
