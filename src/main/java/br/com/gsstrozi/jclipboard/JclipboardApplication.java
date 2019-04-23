@@ -4,7 +4,7 @@ import org.jnativehook.GlobalScreen;
 import org.jnativehook.NativeHookException;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import br.com.gsstrozi.jclipboard.components.ClipboardPanel;
+import br.com.gsstrozi.jclipboard.components.ClipboardPanelComponent;
 import br.com.gsstrozi.jclipboard.listener.NativeGlobalKeyListener;
 import br.com.gsstrozi.jclipboard.stack.Stack;
 import javafx.application.Application;
@@ -30,7 +30,7 @@ public class JclipboardApplication extends Application {
 	public void start(Stage stage) throws Exception {
 		Stack.load();
 		
-		ClipboardPanel pane = new ClipboardPanel();
+		ClipboardPanelComponent pane = new ClipboardPanelComponent();
 		Scene scene = new Scene(pane.render(stage));
 		stage.setScene(scene);
 		stage.initStyle(StageStyle.UNDECORATED);

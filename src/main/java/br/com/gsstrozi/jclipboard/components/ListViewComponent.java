@@ -6,13 +6,13 @@ import javafx.geometry.Orientation;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
-public class ListViewItens {
+public class ListViewComponent {
 
 	public static ListView<String> viewItens = new ListView<String>(Stack.items);
 	
-	public static ListView<String> render(Stage stage) {
+	public ListView<String> render(Stage stage) {
 
-		ViewItemEvent event = new ViewItemEvent(stage, viewItens);
+		ViewItemEvent event = new ViewItemEvent(stage);
 		
 		viewItens.setOnKeyPressed(event);
 		

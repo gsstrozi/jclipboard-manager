@@ -3,6 +3,7 @@ package br.com.gsstrozi.jclipboard.listener;
 import org.jnativehook.keyboard.NativeKeyEvent;
 import org.jnativehook.keyboard.NativeKeyListener;
 
+import br.com.gsstrozi.jclipboard.components.ListViewComponent;
 import br.com.gsstrozi.jclipboard.interaction.ClipboardInteractions;
 import javafx.application.Platform;
 import javafx.scene.input.Clipboard;
@@ -23,7 +24,9 @@ public class NativeGlobalKeyListener implements NativeKeyListener {
 	public void nativeKeyPressed(NativeKeyEvent e) {
 		Platform.runLater(() -> {
 			if (e.getKeyCode() == NativeKeyEvent.VC_F9) {
+				ListViewComponent.update();
 				stage.setIconified(false);
+				
 			} else if (e.getKeyCode() == NativeKeyEvent.VC_CONTROL_L) {
 				keyCTRL = true;
 				if (keyC) {
